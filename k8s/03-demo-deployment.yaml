@@ -3,12 +3,12 @@ kind: Deployment
 metadata:
   name: simple-deployment
 spec:
-  replicas: 2
+  replicas: 3
   template:
     metadata:
       labels:
         app: chadev-demo
     spec:
       containers:
-      - name: failing-http-server
-        image: quay.io/robertjscott/failing-http-server:0.1.0
+      - name: demo-http-server
+        image: quay.io/robertjscott/demo-http-server:0.1.1

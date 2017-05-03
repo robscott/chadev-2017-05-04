@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: simple-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: chadev-demo
+    spec:
+      containers:
+      - name: demo-http-server
+        image: quay.io/robertjscott/demo-http-server:0.1.1
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          periodSeconds: 5
+          timeoutSeconds: 1
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          periodSeconds: 5
+          timeoutSeconds: 1
+          initialDelaySeconds: 25
+        env:
+        - name: STARTUP_DELAY_SECONDS
+          value: '20'
