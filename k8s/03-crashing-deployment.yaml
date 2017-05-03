@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: simple-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: chadev-demo
+    spec:
+      containers:
+      - name: crashing-http-server
+        image: quay.io/robertjscott/crashing-http-server:0.1.0

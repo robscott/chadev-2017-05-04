@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-pod
+  labels:
+    app: chadev-demo
+spec:
+  containers:
+  - name: simple-http-server
+    image: quay.io/robertjscott/simple-http-server:0.1.0
