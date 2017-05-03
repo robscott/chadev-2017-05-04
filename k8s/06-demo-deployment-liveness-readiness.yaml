@@ -14,13 +14,13 @@ spec:
         image: quay.io/robertjscott/demo-http-server:0.1.1
         readinessProbe:
           httpGet:
-            path: /
+            path: /ready
             port: 3000
           periodSeconds: 5
           timeoutSeconds: 1
         livenessProbe:
           httpGet:
-            path: /
+            path: /alive
             port: 3000
           periodSeconds: 5
           timeoutSeconds: 1
