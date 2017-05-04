@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: mayhem-deployment
 spec:
-  replicas: 2
+  replicas: 4
   template:
     metadata:
       labels:

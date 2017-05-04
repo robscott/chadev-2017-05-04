@@ -24,7 +24,7 @@ spec:
             port: 3000
           periodSeconds: 5
           timeoutSeconds: 1
-          initialDelaySeconds: 25
+          initialDelaySeconds: 30
         env:
         - name: STARTUP_DELAY_SECONDS
           value: '20'
